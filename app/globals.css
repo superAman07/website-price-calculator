@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white border border-gray-200 shadow-lg;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .button-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-md 
+           transition-all duration-300 hover:from-blue-700 hover:to-purple-700 
+           hover:shadow-lg active:scale-95 text-sm;
+  }
+  
+  .button-secondary {
+    @apply px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-md 
+           transition-all duration-300 hover:bg-gray-50 
+           hover:shadow-lg active:scale-95 text-sm;
+  }
+
+  /* Custom Slider Styles */
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .slider::-webkit-slider-track {
+    background: theme('colors.gray.200');
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, theme('colors.blue.600'), theme('colors.purple.600'));
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .slider::-moz-range-track {
+    background: theme('colors.gray.200');
+    height: 6px;
+    border-radius: 3px;
+    border: none;
+  }
+
+  .slider::-moz-range-thumb {
+    background: linear-gradient(to right, theme('colors.blue.600'), theme('colors.purple.600'));
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 
